@@ -9,27 +9,29 @@
     "test:coverage": "turbo run test:coverage",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
-    "storybook": "turbo run storybook --filter=web",
-    "build-storybook": "turbo run build-storybook",
     "clean": "turbo run clean && rm -rf node_modules",
     "type-check": "turbo run type-check",
     "prepare": "husky install",
-    "pre-commit": "lint-staged",
-    "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish"
+    "pre-commit": "lint-staged"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.1",
+    "@tailwindcss/vite": "^4.1.13",
     "@turbo/gen": "^1.12.4",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
+    "turbo": "^2.5.6",
     "typescript": "5.9.2"
   },
   "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite": "7.1.2",
+      "rollup": "4.50.1"
+    }
   }
 }
